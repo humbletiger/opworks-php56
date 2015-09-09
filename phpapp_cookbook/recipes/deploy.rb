@@ -23,7 +23,7 @@ node[:deploy].each do |application, deploy|
   #execute "ssh-agent bash -c 'ssh-add /root/.ssh/id_deploy'"
   
   # clone the repo
-  execute "cd /var && git clone #{deploy[:scm][:repository]} #{node['phpapp']['app_name']}" do
+  execute "cd /var && rm -Rf #{node['phpapp']['app_name']} && git clone #{deploy[:scm][:repository]} #{node['phpapp']['app_name']}" do
     ignore_failure true
   end
 

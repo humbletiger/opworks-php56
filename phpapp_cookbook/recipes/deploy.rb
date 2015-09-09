@@ -50,7 +50,7 @@ node[:deploy].each do |application, deploy|
   script "install_composer" do
     interpreter "bash"
     user "root"
-    cwd "/var/app"
+    cwd "/var/#{node['phpapp']['app_name']}"
     code <<-EOH
     composer install --prefer-source --optimize-autoloader  --no-interaction
     EOH

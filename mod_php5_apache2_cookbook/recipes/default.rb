@@ -10,20 +10,20 @@ case node[:platform]
         end
 
       # add the webtatic repo
-      yum_repository 'webtatic' do
-        description 'webtatic Project'
-        mirrorlist 'http://repo.webtatic.com/yum/el6/x86_64/mirrorlist'
-        gpgkey 'http://repo.webtatic.com/yum/RPM-GPG-KEY-webtatic-andy'
+      yum_repository 'IUS' do
+        description 'IUS Community Project'
+        mirrorlist 'https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos6&arch=x86_64&protocol=http'
+        gpgkey 'https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY'
         action :create
       end
 
-      node.set['apache']['version'] = '2.2'
+      node.set['apache']['version'] = '2.4'
       node.set['apache']['package'] = 'httpd'
 
-      node.set['php']['packages'] = ['php56w', 'php56w-devel', 'php56w-cli', 'php56w-snmp', 'php56w-soap', 'php56w-xml', 'php56w-xmlrpc', 'php56w-process', 'php56w-mysqlnd', 'php56w-pecl-memcache', 'php56w-opcache', 'php56w-pdo', 'php56w-imap', 'php56w-mbstring', 'php56w-intl', 'php56w-mcrypt']
+      node.set['php']['packages'] = ['php56u', 'php56u-devel', 'php56u-cli', 'php56u-snmp', 'php56u-soap', 'php56u-xml', 'php56u-xmlrpc', 'php56u-process', 'php56u-mysqlnd', 'php56u-pecl-memcache', 'php56u-opcache', 'php56u-pdo', 'php56u-imap', 'php56u-mbstring', 'php56u-intl', 'php56u-mcrypt']
 
       # manual install
-      # execute "yum install -y php56w php56w-devel php56w-cli php56w-snmp php56w-soap php56w-xml php56w-xmlrpc php56w-process php56w-mysqlnd php56w-pecl-memcache php56w-opcache php56w-pdo php56w-imap php56w-mbstring php56w-intl php56w-mcrypt"
+      # execute "yum install -y php56u php56u-devel php56u-cli php56u-snmp php56u-soap php56u-xml php56u-xmlrpc php56u-process php56u-mysqlnd php56u-pecl-memcache php56u-opcache php56u-pdo php56u-imap php56u-mbstring php56u-intl php56u-mcrypt"
 
       include_recipe "build-essential"
       include_recipe "apache2::default"

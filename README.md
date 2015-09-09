@@ -1,4 +1,4 @@
-opsworks-php-cookbooks
+opsworks-php56-IUS
 ==================================
 
 AWS OpsWorks custom layer with support for PHP 5.6 and php application deployment. Also contains a centos 6.5 virtual machine using Vagrant that emulate Amazon Linux environment.
@@ -28,4 +28,9 @@ Vagrant Setup
 3. Install ChefDK ">= 0.6.0" https://downloads.getchef.com/chef-dk/mac/#/
 3. Install vagrant-omnibus `vagrant plugin install vagrant-omnibus`
 4. Install vagrant-berkshelf `vagrant plugin install vagrant-berkshelf`
-4. Create a new project with the supplied `Vagrantfile` and edit `chef.cookbooks_path` to point to the cookbooks folder
+5. Create a new project with the supplied `Vagrantfile` and edit `chef.cookbooks_path` to point to the cookbooks folder
+
+Credits:
+=============
+Adar Porat https://github.com/aporat/opsworks-php-cookbooks
+

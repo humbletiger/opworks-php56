@@ -17,7 +17,7 @@ case node[:platform]
         action :create
       end
 
-      node.set['apache']['version'] = '2.4'
+      node.set['apache']['version'] = '2.2'
       node.set['apache']['package'] = 'httpd'
 
       node.set['php']['packages'] = ['php56u', 'php56u-devel', 'php56u-cli', 'php56u-snmp', 'php56u-soap', 'php56u-xml', 'php56u-xmlrpc', 'php56u-process', 'php56u-mysqlnd', 'php56u-pecl-memcache', 'php56u-opcache', 'php56u-pdo', 'php56u-imap', 'php56u-mbstring', 'php56u-intl', 'php56u-mcrypt']
